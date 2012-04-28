@@ -1,4 +1,4 @@
-A MarkDown TextEditor with jQuery and Markitup! and redcarpet for Rails 3
+A MarkDown TextEditor with jQuery and Markitup! and redcarpet for Rails 3.1+ and Assets Pipeline
 =========================================================================
 
 __use: [Markitup](http://markitup.jaysalvat.com/ "Markitup")__ and [Redcarpet](https://github.com/tanoku/redcarpet "Redcarpet")
