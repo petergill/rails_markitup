@@ -7,7 +7,7 @@ __[Demo](http://markitup.jaysalvat.com/downloads/demo.php?id=markupsets/markdown
 
 Support Env:
 ------------
-Rails3.0.8+/Ruby1.8.7+
+Rails3.1.0+/Ruby1.9.1+
 
 ## Usage:
 
@@ -19,37 +19,25 @@ a. In Gemfile:
 
     gem "redcarpet"
     gem "albino"
-    gem "nokogiri"
-    gem 'rails_markitup'
+    gem 'rails_markitup', github: 'Gonzih/rails_markitup', branch: 'rails31'
 
-b. Then run :
 
-    rails g rails_markitup:install
+b. In your textarea , simple\_form\_for exapmle:
 
-c. In layout:
+    = form.input :content, :as => :text, :input_html => {:id => 'markdown'}
 
-    = stylesheet_link_tag :markitup
-    = javascript_include_tag :markitup
+c. In your application.css:
 
-    or you can use another highlight css:
+    //= require markitup
 
-    = stylesheet_link_tag :markitup_shiny
+d. In your application.js:
 
-d. In your textarea , simple\_form\_for exapmle:
-
-    = form.input :content, :as => :text, :input_html => {:id => 'markdown'} 
-
-e. In your application.js:
+    //= require markitup
 
     $(document).ready(function(){
       $('#markdown').markItUp(myMarkdownSettings);
     });
 
-f. In your show page:
+e. In your show page:
 
     = markdown(@topic.content)
-
-    if you use shiny style
-
-    = markdown(@topic.content, 'shiny')
-
