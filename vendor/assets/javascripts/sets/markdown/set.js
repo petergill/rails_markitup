@@ -8,30 +8,25 @@ myMarkdownSettings = {
     nameSpace:          'markdown', // Useful to prevent multi-instances CSS conflict
     previewParserPath:  '~/sets/markdown/preview.php',
     onShiftEnter:       {keepDefault:false, openWith:'\n\n'},
-    markupSet: [
-        {name:'First Level Heading', key:"1", placeHolder:'Your title here...', closeWith:function(markItUp) { return miu.markdownTitle(markItUp, '=') } },
-        {name:'Second Level Heading', key:"2", placeHolder:'Your title here...', closeWith:function(markItUp) { return miu.markdownTitle(markItUp, '-') } },
-        {name:'Heading 3', key:"3", openWith:'### ', placeHolder:'Your title here...' },
-        {name:'Heading 4', key:"4", openWith:'#### ', placeHolder:'Your title here...' },
-        {name:'Heading 5', key:"5", openWith:'##### ', placeHolder:'Your title here...' },
-        {name:'Heading 6', key:"6", openWith:'###### ', placeHolder:'Your title here...' },
-        {separator:'---------------' },        
-        {name:'Bold', key:"B", openWith:'**', closeWith:'**'},
-        {name:'Italic', key:"I", openWith:'_', closeWith:'_'},
-        {separator:'---------------' },
-        {name:'Bulleted List', openWith:'- ' },
-        {name:'Numeric List', openWith:function(markItUp) {
-            return markItUp.line+'. ';
-        }},
-        {separator:'---------------' },
-        {name:'Picture', key:"P", replaceWith:'![[![Alternative text]!]]([![Url:!:http://]!] "[![Title]!]")'},
-        {name:'Link', key:"L", openWith:'[', closeWith:']([![Url:!:http://]!] "[![Title]!]")', placeHolder:'Your text to link here...' },
-        {separator:'---------------'},    
-        {name:'Quotes', openWith:'> '},
-        {name:'Code Block / Code', openWith:'(!(\t|!|`)!)', closeWith:'(!(`)!)'},
-        {separator:'---------------'},
-        {name:'Preview', call:'preview', className:"preview"}
-    ]
+   markupSet: [
+    	{name:'Heading 1', key:'1', openWith:'h1(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Heading 2', key:'2', openWith:'h2(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Heading 3', key:'3', openWith:'h3(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Heading 4', key:'4', openWith:'h4(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Heading 5', key:'5', openWith:'h5(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Heading 6', key:'6', openWith:'h6(!(([![Class]!]))!). ', placeHolder:'Your title here...' },
+		{name:'Paragraph', key:'P', openWith:'p(!(([![Class]!]))!). '},
+		{separator:'---------------' },
+		{name:'Bold', key:'B', closeWith:'*', openWith:'*'},
+		{name:'Italic', key:'I', closeWith:'_', openWith:'_'},
+		
+		{separator:'---------------' },
+		{name:'Bulleted list', openWith:'(!(* |!|*)!)'},
+		{name:'Numeric list', openWith:'(!(# |!|#)!)'}, 
+		{separator:'---------------' },
+		{name:'Link', openWith:'"', closeWith:'([![Title attribute text]!])":[![Link:!:http://]!]', placeHolder:'Your text for link here...' },
+		{name:'Email link', openWith:'"', closeWith:'([![Title attribute text]!])":[![Link:!:mailto:example@email.com]!]', placeHolder:'Your text for email link here...' }
+	]
 }
 
 // mIu nameSpace to avoid conflict.
